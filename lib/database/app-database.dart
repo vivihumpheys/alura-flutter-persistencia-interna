@@ -10,7 +10,7 @@ Future<Database> createDataBase() {
         db.execute('CREATE TABLE contacts('
             'id INTEGER PRIMARY KEY, '
             'name TEXT, '
-            'account-number INTEGER)');
+            'account_number INTEGER)');
       }, version: 1);
     },
   );
@@ -22,7 +22,7 @@ Future<int> save(Contact contact) {
 
     contactMap['id'] = contact.id;
     contactMap['name'] = contact.name;
-    contactMap['account-number'] = contact.accountNumber;
+    contactMap['account_number'] = contact.accountNumber;
     return db.insert('contacts', contactMap);
   });
 }
@@ -34,7 +34,7 @@ Future<List<Contact>> findAll() {
       for (Map<String, dynamic> map in maps) {
         final Contact contact = Contact(
           map['name'],
-          map['account-number'],
+          map['account_number'],
           map['id'],
         );
         contacts.add(contact);
