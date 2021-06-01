@@ -28,7 +28,8 @@ dependencies:
   cupertino_icons: ^1.0.0
   sqflite:
   path:
-
+  http:
+  http_interceptor:
 dev_dependencies:
   flutter_test:
     sdk: flutter
